@@ -1,0 +1,16 @@
+__pycache__/
+.pyc
+build
+dist
+*.egg-info
+.idea
+*.sqlite
+temp
+*.nsys-rep
+*.so
+profiler_parameters.csv
+/.vscode
+trace.json
+trace.stacks
+/test/longserve/**/*.pdf
+trace*.json
