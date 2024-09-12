@@ -654,6 +654,12 @@ Wait for the server to start. After it starts you should see a message like
 # INFO 03:14:38 (context) 0 waiting, 0 finished but unaccepted, 0 blocks occupied by on-the-fly requests
 ```
 
+And then enter this in the C terminal:
+
+```bash
+srun python3 ~/research/LongServe/test/longserve/5-benchmark-serving.py --backend distserve --dataset ~/research/datasets/preprocessed/leval.ds --num-prompts-req-rates "[(100, 0.1), (300, 0.3), (500, 0.5)]"
+```
+
 ### Reproduce Figure 11
 
 *0.5 human hours + 4 machine hours (but you can select to perform only a subset of experiments)*
