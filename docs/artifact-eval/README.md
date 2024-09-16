@@ -2,11 +2,13 @@
 
 This is the artifact of the paper "LoongServe: Efficiently Serving Long-context Large Language Models with Elastic Sequence Parallelism". We are going to guide you through the process of reproducing the main results in the paper.
 
-Here is a high-level overview of the whole process:
+Here is a high-level overview of the whole process for AE reviewers:
 1. Log in to the cluster via the jump server and SSH.
 2. Activate the environment.
 3. Kick-the-tires. Run some toy examples to get familiar with the cluster and the environment.
 4. Reproduce the main results. Run the experiments and generate the figures.
+
+If you want to run the artifact independently on your own machine, please refer to the section "Instructions for non-AE-reviewers".
 
 ## Contents
 
@@ -54,13 +56,22 @@ Here is a high-level overview of the whole process:
       - [LoongServe w/o ESP (TP=8)](#loongserve-wo-esp-tp8)
       - [LoongServe w/o ESP (TP=2) x 4](#loongserve-wo-esp-tp2-x-4)
 
+## Instructions for non-AE-Reviewers
+
+This section explains how to run this artifact independently on your own server. You will need the following steps:
+
+1. Prepare the server. If you are not an AE reviewer, you will need access to a server equipped with 8 NVIDIA A800 80G SXM (or A100 80G SXM) GPUs. It's essential that the GPUs are the SXM variant to ensure full NVLink connectivity between each pair of GPUs. Additionally, the multi-node experiment requires two such nodes, preferably connected via a high-speed InfiniBand network. We do not require a specific operating system for this artifact.
+2. Setting up the environment. Please follow [this instruction](supplemental/repro-environment.md).
+3. Reproducing the dataset. Please follow [this instruction](supplemental/repro-dataset.md).
+4. Run the toy example and then reproduce the main results following instructions below. Notice that, depend on the type of you server, you may or may not need to use the `slurm` command.
+
 ## Log into the Cluster
 
 *5 human minutes + 5 machine minutes*
 
 ### Connect to the Cluster
 
-Please refer to the *Technical Requirements* section on the HotCRP AE page for the connection information.
+If you are an AE reviewer, please refer to the *Technical Requirements* section on the HotCRP AE page to access the server we have prepared for you. Otherwise, please refer to contents above for the requirement of the server needed.
 
 ### Activate the Environment
 
