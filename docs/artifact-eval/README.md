@@ -97,6 +97,8 @@ export EXP_RESULT_ROOT_PATH=/mnt/petrelfs/zhaoyihao/intlsy/research/exp-results/
 
 You need to execute this command manually every time after logg into the cluster. Do not store this command in your `.bashrc` or `config.fish` since it may interfere with other AE reviewers.
 
+Besides, if you are not an AE reviewer, please download the [LWM-Text-1M model](https://huggingface.co/LargeWorldModel/LWM-Text-1M/tree/main) and set the environment variable `LWM_WEIGHT_PATH` to the model weight directory (the file `pytorch_model-00001-of-00002.bin` should reside under `LWM_WEIGHT_PATH`). If you want to evaluate DistServe, please also use [DistServe's model weight convention script](https://github.com/LLMServe/DistServe/blob/main/distserve/downloader/converter.py) and set the environment variable `MODEL_PATH_LWM_DISTSERVE`. If you don't plan to evaluate DistServe, please set `MODEL_PATH_LWM_DISTSERVE` to some random string.
+
 ## Environment Setup
 
 To save you time, we have already prepared the necessary conda environments for you. If you want to reproduce the environment, please follow [this instruction](supplemental/repro-environment.md).
